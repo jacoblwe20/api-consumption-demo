@@ -1,0 +1,12 @@
+{
+	"name" : "api-test",
+	"success" : "true",
+	"results" : [{
+			"name" : "Jacob Lowe",
+			"isThe" : "author"
+		},
+		{
+			"name" : "Scott Motte",
+			"isThe" : "organizer"
+		}]
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<title>Api Calls</title>
+<script src=//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js></script>
+<script defer>
+(function($){
+	$.getJSON('/test.json', function(response){
+		$('body').prepend('<h1>'+response.name+'</h1>');
+		console.log(response);
+	});
+
+	$.ajax({
+		url : 'http://jacoblowe.me/v1/api-test.json',
+		dataType : 'jsonp',
+		type : 'get',
+		data : {
+			jsonp : '?'
+		},
+		success : function(response){
+			$('body').prepend('<h1>'+response.name+'</h1>');
+			console.log(response);
+		}
+	});
+	
+}(jQuery))
+</script>
