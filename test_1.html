@@ -3,6 +3,21 @@
 <script src=//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js></script>
 <script defer>
 (function($){
+
+	var get = function(url, callback){
+
+		var xmlhttp = new XMLHttpRequest();
+		// Open a connection to the server
+		xmlhttp.open("GET", url, true);
+
+		// Setup a function for the server to run when it's done
+		xmlhttp.onreadystatechange = callback;
+
+		// Send the request
+		xmlhttp.send(null);
+	};
+
+
 	$.getJSON('/test.json', function(response){
 		$('body').prepend('<h1>'+response.name+'</h1>');
 		console.log(response);
@@ -20,6 +35,14 @@
 			console.log(response);
 		}
 	});
-	
+
+	get('http://jacoblowe.me/v1/api-test.json', function(e){
+
+		console.log(this.responseText);
+
+	})
+
+
+
 }(jQuery))
 </script>
